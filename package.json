@@ -1,0 +1,17 @@
+{
+  "name": "javascript-dom-challenges",
+  "version": "1.0.0",
+  "description": "Collection of JavaScript DOM manipulation challenges",
+  "main": "index.html",
+  "homepage": "https://sagar-1m.github.io/JavaScript-DOM-Challenges",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "dom",
+    "challenges"
+  ],
+  "author": "Sagar",
+  "license": "MIT"
+}

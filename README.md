@@ -2,6 +2,9 @@
 
 A collection of interactive DOM manipulation challenges built with vanilla JavaScript. Each challenge focuses on different aspects of DOM manipulation and user interaction.
 
+[![Deployment Status](https://img.shields.io/github/deployments/sagar-1m/JavaScript-DOM-Challenges/github-pages)](https://sagar-1m.github.io/JavaScript-DOM-Challenges/)
+[![Last Commit](https://img.shields.io/github/last-commit/sagar-1m/JavaScript-DOM-Challenges)](https://github.com/sagar-1m/JavaScript-DOM-Challenges/commits/main)
+
 ## 🎯 Challenges List
 
 1. **Light Bulb Toggle 💡 🌚**
