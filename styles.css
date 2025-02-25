@@ -1,35 +1,137 @@
+:root {
+  /* Light mode colors */
+  --bg-gradient-from: #f5f7fa;
+  --bg-gradient-to: #e4e8eb;
+  --text-color: #2d3436;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --bg-gradient-from: #2d3436;
+  --bg-gradient-to: #1a1d1e;
+  --text-color: #f5f7fa;
+  --card-bg: rgba(45, 52, 54, 0.9);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif; /* More modern font stack */
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-from) 0%,
+    var(--bg-gradient-to) 100%
+  ); /* Subtle gradient */
+  min-height: 100vh; /* Full viewport height */
+  color: var(--text-color); /* Darker text for better contrast */
 }
 
 h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 2rem;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .challenges-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 1rem;
 }
 
 .challenges-grid a {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(5px);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.1s);
 }
 
 .challenges-grid a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px var(--card-shadow);
+  background: var(--card-bg);
+  opacity: 1;
+  border-color: var(--card-border);
+}
+
+/* Add a new hover effect for dark mode */
+[data-theme="dark"] .challenges-grid a:hover {
+  background: rgba(60, 70, 75, 0.95);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+#themeToggle {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Add these new styles for responsiveness and animations */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .theme-toggle {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  #themeToggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
