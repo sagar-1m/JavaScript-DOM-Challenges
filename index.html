@@ -3,79 +3,195 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript DOM Challenges</title>
+    <meta
+      name="description"
+      content="Master JavaScript DOM manipulation through interactive coding challenges"
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, DOM, Web Development, Coding Challenges"
+    />
+    <meta name="author" content="Sagar Maheshwari" />
+
+    <meta property="og:title" content="JavaScript DOM Challenges" />
+    <meta
+      property="og:description"
+      content="Interactive DOM manipulation challenges for web developers"
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+
     <script src="script.js" defer></script>
+    <title>JavaScript DOM Challenges</title>
   </head>
   <body>
-    <div class="theme-toggle">
-      <button id="themeToggle" aria-label="Toggle theme">🌞</button>
-    </div>
-    <h1>JavaScript DOM Challenges</h1>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- Add author section -->
-    <div class="author-section">
-      <div class="author-info">
-        <h2>Created by Sagar Maheshwari</h2>
-        <p>Frontend Developer | JavaScript Enthusiast</p>
-        <div class="social-links">
-          <a
-            href="https://github.com/sagar-1m"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://x.com/maheshwarisaga4"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-          >
-            <i class="fa-brands fa-x"></i>
-          </a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="/" class="nav-logo"
+          ><i class="fa-brands fa-js"></i> <span>DOM Challenges</span></a
+        >
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="#challenges" class="nav-link">Challenges</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li>
+            <a
+              href="https://github.com/sagar-1m/JavaScript-DOM-Challenges"
+              class="nav-link github-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-github"></i> Source
+            </a>
+          </li>
+          <li>
+            <button
+              id="themeToggle"
+              class="theme-toggle"
+              aria-label="Toggle theme"
+            >
+              🌞
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-          <a
-            href="https://www.linkedin.com/in/sagar-maheshwari-1m/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="mailto:maheshwarisagar65@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+    <main id="main">
+      <section class="hero">
+        <div class="container text-center">
+          <h1>JavaScript DOM Mastery</h1>
+          <p class="hero-subtitle">
+            Master DOM manipulation through real-world challenges
+          </p>
+          <div class="hero-actions">
+            <a href="#challenges" class="btn btn-primary"
+              ><i class="fas fa-rocket"></i> Start Learning</a
+            >
+            <a
+              href="https://github.com/sagar-1m/JavaScript-DOM-Challenges"
+              class="btn btn-secondary"
+            >
+              <i class="fa-brands fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container">
+          <h2>Why Choose These Challenges?</h2>
+          <div class="features-grid">
+            <article class="feature-card" role="article">
+              <i class="fas fa-code"></i>
+              <h3>Practical Learning</h3>
+              <p>Learn by building real projects with JavaScript</p>
+            </article>
+            <article class="feature-card" role="article">
+              <i class="fas fa-graduation-cap"></i>
+              <h3>Progressive Difficulty</h3>
+              <p>Start from basics to advanced levels</p>
+            </article>
+            <article class="feature-card" role="article">
+              <i class="fas fa-laptop-code"></i>
+              <h3>Interactive Practice</h3>
+              <p>Hands-on DOM manipulation experience</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="challenges" class="challenges-section">
+        <div class="container">
+          <h2>Available Challenges</h2>
+          <div class="challenges-grid">
+            <a href="./challenge-1/index.html"
+              >Challenge 1: Light Bulb Toggle 💡</a
+            >
+            <a href="./challenge-2/index.html"
+              >Challenge 2: Change Text Color 🦎</a
+            >
+            <a href="./challenge-3/index.html"
+              >Challenge 3: Real-time Form Input Display 📋</a
+            >
+            <a href="./challenge-4/index.html"
+              >Challenge 4: Task Management 🧏🏻‍♂️</a
+            >
+            <a href="./challenge-5/index.html"
+              >Challenge 5: Image Carousel 🖼️</a
+            >
+            <a href="./challenge-6/index.html"
+              >Challenge 6: Enhanced Clock ⏰</a
+            >
+            <a href="./challenge-7/index.html">Challenge 7: Accordion 🪗</a>
+            <a href="./challenge-8/index.html"
+              >Challenge 8: Simple Shopping Cart 🛒</a
+            >
+            <a href="./challenge-9/index.html">Challenge 9: Sliding Menu 🪟</a>
+            <a href="./challenge-10/index.html"
+              >Challenge 10: Interactive Memory Card Game 🂫</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-profile">
+          <img
+            src="https://github.com/sagar-1m.png"
+            alt="Sagar Maheshwari"
+            class="author-image"
+          />
+          <div class="author-info">
+            <h3>Created by Sagar Maheshwari</h3>
+            <p>
+              Full Stack Developer passionate about interactive web applications
+            </p>
+            <div class="social-links">
+              <a href="https://github.com/sagar-1m" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://x.com/maheshwarisaga4" target="_blank"
+                ><i class="fa-brands fa-x"></i
+              ></a>
+              <a
+                href="https://linkedin.com/in/sagar-maheshwari-1m"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <nav>
+            <a href="#challenges">Challenges</a>
+            <a href="#about">About</a>
+            <a href="https://github.com/sagar-1m/JavaScript-DOM-Challenges"
+              >Source Code</a
+            >
+          </nav>
         </div>
       </div>
-    </div>
-
-    <div class="challenges-grid">
-      <a href="./challenge-1/index.html"
-        >Challenge 1: Light Bulb Toggle 💡 🌚</a
-      >
-      <a href="./challenge-2/index.html">Challenge 2: Change Text Color 🦎</a>
-      <a href="./challenge-3/index.html"
-        >Challenge 3: Real-time Form Input Display 📋</a
-      >
-      <a href="./challenge-4/index.html">Challenge 4: Task Management 🧏🏻‍♂️</a>
-      <a href="./challenge-5/index.html"
-        >Challenge 5: Image Carousel Application 🖼️</a
-      >
-      <a href="./challenge-6/index.html">Challenge 6: Enhanced Clock ⏰</a>
-      <a href="./challenge-7/index.html">Challenge 7: Accordion 🪗</a>
-      <a href="./challenge-8/index.html"
-        >Challenge 8: Simple Shopping Cart 🛒</a
-      >
-      <a href="./challenge-9/index.html">Challenge 9: Sliding Menu 🪟</a>
-      <a href="./challenge-10/index.html"
-        >Challenge 10: Interactive Memory Card Game 🂫</a
-      >
-    </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 JavaScript DOM Challenges. Built with 💻 by Sagar
+          Maheshwari
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

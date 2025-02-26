@@ -41,7 +41,6 @@ function shuffleCards(array) {
   return array;
 }
 
-// Create game board
 function createGameBoard() {
   cards.forEach((emoji, index) => {
     const card = document.createElement("div");
