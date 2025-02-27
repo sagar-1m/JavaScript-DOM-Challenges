@@ -19,6 +19,10 @@
       content="Interactive DOM manipulation challenges for web developers"
     />
     <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://sagar-1m.github.io/JavaScript-DOM-Challenges/"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,6 +32,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
     <script src="script.js" defer></script>
     <title>JavaScript DOM Challenges</title>
   </head>
@@ -36,7 +43,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
-        <a href="/" class="nav-logo"
+        <a href="./" class="nav-logo"
           ><i class="fa-brands fa-js"></i> <span>DOM Challenges</span></a
         >
         <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -71,11 +78,11 @@
     <main id="main">
       <section class="hero">
         <div class="container text-center">
-          <h1>JavaScript DOM Mastery</h1>
-          <p class="hero-subtitle">
+          <h1 class="animated animated-delay-1">JavaScript DOM Mastery</h1>
+          <p class="hero-subtitle animated animated-delay-2">
             Master DOM manipulation through real-world challenges
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions animated animated-delay-3">
             <a href="#challenges" class="btn btn-primary"
               ><i class="fas fa-rocket"></i> Start Learning</a
             >
@@ -91,19 +98,28 @@
 
       <section id="about" class="about-section">
         <div class="container">
-          <h2>Why Choose These Challenges?</h2>
+          <h2 class="animated">Why Choose These Challenges?</h2>
           <div class="features-grid">
-            <article class="feature-card" role="article">
+            <article
+              class="feature-card animated animated-delay-1"
+              role="article"
+            >
               <i class="fas fa-code"></i>
               <h3>Practical Learning</h3>
               <p>Learn by building real projects with JavaScript</p>
             </article>
-            <article class="feature-card" role="article">
+            <article
+              class="feature-card animated animated-delay-2"
+              role="article"
+            >
               <i class="fas fa-graduation-cap"></i>
               <h3>Progressive Difficulty</h3>
               <p>Start from basics to advanced levels</p>
             </article>
-            <article class="feature-card" role="article">
+            <article
+              class="feature-card animated animated-delay-3"
+              role="article"
+            >
               <i class="fas fa-laptop-code"></i>
               <h3>Interactive Practice</h3>
               <p>Hands-on DOM manipulation experience</p>
@@ -114,32 +130,36 @@
 
       <section id="challenges" class="challenges-section">
         <div class="container">
-          <h2>Available Challenges</h2>
+          <h2 class="animated">Available Challenges</h2>
           <div class="challenges-grid">
-            <a href="./challenge-1/index.html"
+            <a href="./challenge-1/index.html" class="animated"
               >Challenge 1: Light Bulb Toggle 💡</a
             >
-            <a href="./challenge-2/index.html"
+            <a href="./challenge-2/index.html" class="animated"
               >Challenge 2: Change Text Color 🦎</a
             >
-            <a href="./challenge-3/index.html"
+            <a href="./challenge-3/index.html" class="animated"
               >Challenge 3: Real-time Form Input Display 📋</a
             >
-            <a href="./challenge-4/index.html"
+            <a href="./challenge-4/index.html" class="animated"
               >Challenge 4: Task Management 🧏🏻‍♂️</a
             >
-            <a href="./challenge-5/index.html"
+            <a href="./challenge-5/index.html" class="animated"
               >Challenge 5: Image Carousel 🖼️</a
             >
-            <a href="./challenge-6/index.html"
+            <a href="./challenge-6/index.html" class="animated"
               >Challenge 6: Enhanced Clock ⏰</a
             >
-            <a href="./challenge-7/index.html">Challenge 7: Accordion 🪗</a>
-            <a href="./challenge-8/index.html"
+            <a href="./challenge-7/index.html" class="animated"
+              >Challenge 7: Accordion 🪗</a
+            >
+            <a href="./challenge-8/index.html" class="animated"
               >Challenge 8: Simple Shopping Cart 🛒</a
             >
-            <a href="./challenge-9/index.html">Challenge 9: Sliding Menu 🪟</a>
-            <a href="./challenge-10/index.html"
+            <a href="./challenge-9/index.html" class="animated"
+              >Challenge 9: Sliding Menu 🪟</a
+            >
+            <a href="./challenge-10/index.html" class="animated"
               >Challenge 10: Interactive Memory Card Game 🂫</a
             >
           </div>
@@ -188,8 +208,11 @@
       </div>
       <div class="footer-bottom">
         <p>
-          &copy; 2025 JavaScript DOM Challenges. Built with 💻 by Sagar
-          Maheshwari
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          JavaScript DOM Challenges. Built with 💻 by Sagar Maheshwari
         </p>
       </div>
     </footer>

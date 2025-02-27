@@ -1,3 +1,4 @@
+/* ========== VARIABLES ========== */
 :root {
   /* Colors */
   --primary: #3b82f6;
@@ -16,14 +17,10 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
   --font-size-4xl: 2.5rem;
-
-  /* Font Weights - Added missing */
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
-
-  /* Line Heights - Added missing */
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
@@ -40,13 +37,25 @@
   /* Transitions */
   --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Z-index layers - Added new */
+  /* Z-index layers */
   --z-navbar: 1000;
   --z-mobile-menu: 1001;
   --z-overlay: 999;
+
+  /* Shadow Effects */
+  --shadow-sm: 0 2px 4px var(--card-shadow);
+  --shadow-md: 0 4px 6px var(--card-shadow);
+  --shadow-lg: 0 8px 20px var(--card-shadow);
+
+  /* Common Effects */
+  --hover-lift: translateY(-5px);
+  --hover-lift-sm: translateY(-2px);
+
+  /* Card Properties */
+  --card-padding: var(--spacing-md);
 }
 
-/* Reset */
+/* ========== RESET & BASE ========== */
 *,
 *::before,
 *::after {
@@ -55,7 +64,6 @@
   box-sizing: border-box;
 }
 
-/* Base */
 body {
   font-family: var(--font-primary);
   background: var(--bg-color);
@@ -67,19 +75,7 @@ body {
   transition: var(--transition-base);
 }
 
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-  width: 100%;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* ========== TYPOGRAPHY ========== */
 h1,
 h2,
 h3,
@@ -88,13 +84,12 @@ h5,
 h6 {
   font-weight: var(--font-bold);
   line-height: var(--line-height-tight);
+  color: var(--text-color);
 }
 
 h1 {
   font-size: var(--font-size-4xl);
-  font-weight: var(--font-bold);
   margin-bottom: 1rem;
-  color: var(--text-color);
 }
 
 h2 {
@@ -107,94 +102,81 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-.challenges-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  padding: 1rem;
+/* ========== UTILITY CLASSES ========== */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  width: 100%;
 }
 
-.challenges-grid a {
-  background: var(--primary);
-  padding: 2rem;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #ffffff;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
-  transition: var(--transition-base);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  font-size: 1.1rem;
-  line-height: 1.4;
-  animation: fadeIn 0.6s ease-out forwards;
-  animation-delay: calc(var(--index, 0) * 0.1s);
-}
-
-.challenges-grid a:hover {
-  transform: translateY(-5px);
-  background: var(--primary-hover);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.theme-toggle {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: var(--spacing-xs);
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: var(--transition-base);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px var(--card-shadow);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-.theme-toggle:focus {
-  outline: 2px solid var(--primary);
-  border-radius: 4px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Keep only one version of social links styles */
+.flex-center,
+.theme-toggle,
 .social-links {
   display: flex;
+  align-items: center;
+}
+
+.flex-center {
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
 }
 
-.social-links a {
-  color: var(--text-color);
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
-  opacity: 0.8;
+.text-center {
+  text-align: center;
 }
 
-.social-links a:hover {
-  transform: translateY(-3px);
-  opacity: 1;
+.hover-lift {
+  transition: var(--transition-base);
 }
 
-/* Navbar & Mobile Menu - Consolidated styles */
+.hover-lift:hover,
+.card-shadow-hover:hover,
+.feature-card:hover,
+.github-link:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.card-base {
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: var(--transition-base);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ========== COMPONENTS ========== */
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 8px;
+  z-index: 100000;
+  transition: top 0.1s ease-in;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
+/* Navbar & Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -202,6 +184,7 @@ h3 {
   right: 0;
   height: var(--navbar-height);
   background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--card-border);
   z-index: var(--z-navbar);
@@ -217,7 +200,6 @@ h3 {
   margin: 0 auto;
 }
 
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -233,12 +215,22 @@ h3 {
   color: #f7df1e;
 }
 
-/* Navigation Menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  z-index: var(--z-mobile-menu);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);
-  margin-left: auto; /* Push menu to the right */
+  margin-left: auto;
   padding: 0 var(--spacing-md);
   list-style: none;
 }
@@ -274,7 +266,6 @@ h3 {
   width: 100%;
 }
 
-/* GitHub Link */
 .github-link {
   display: flex;
   align-items: center;
@@ -284,27 +275,9 @@ h3 {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   transition: var(--transition-base);
-  margin-left: var(--spacing-md); /* Space from nav links */
+  margin-left: var(--spacing-md);
 }
 
-.github-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--card-shadow);
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-color);
-  font-size: var(--font-size-xl);
-  cursor: pointer;
-  padding: var(--spacing-xs);
-  z-index: var(--z-mobile-menu);
-}
-
-/* Added overlay for mobile menu */
 .mobile-menu-overlay {
   display: none;
   position: fixed;
@@ -318,7 +291,31 @@ h3 {
   display: block;
 }
 
-/* Hero Section - Consolidate all hero styles in one place */
+/* Theme Toggle */
+.theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: var(--transition-base);
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--primary);
+  border-radius: 4px;
+}
+
+/* Hero Section */
 .hero {
   padding: 2rem 0;
   margin-top: var(--navbar-height);
@@ -335,6 +332,7 @@ h3 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
+  transform: translateZ(0);
 }
 
 .hero-subtitle {
@@ -363,7 +361,6 @@ h3 {
   margin-top: 2rem;
 }
 
-/* Hero Badge */
 .hero-badge {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -375,94 +372,7 @@ h3 {
   margin-bottom: 1.5rem;
 }
 
-/* Features Grid - Consolidate all feature styles in one place */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0 4rem;
-}
-
-.feature-card {
-  position: relative;
-  text-align: center;
-  padding: 2rem;
-  background: var(--card-bg);
-  border-radius: var(--card-radius);
-  border: 1px solid var(--card-border);
-  box-shadow: 0 4px 6px var(--card-shadow);
-  overflow: hidden;
-  transition: var(--transition-base);
-}
-
-/* Hover effects - consolidated */
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px var(--card-shadow);
-}
-
-.feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent, var(--primary) 300%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.feature-card:hover::before {
-  opacity: 0.1;
-}
-
-/* Feature Icon - consolidated */
-.feature-icon {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  background: var(--card-bg);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  transition: transform 0.3s ease;
-  border: 1px solid var(--card-border);
-}
-
-/* Feature Card Icon Styles */
-.feature-card i {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  /* Add a subtle glow effect */
-  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
-}
-
-/* Hover effect for feature icons */
-.feature-card:hover i {
-  transform: scale(1.1);
-  color: var(--primary-hover);
-  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.4));
-}
-
-/* Feature Card Typography - consolidated */
-.feature-card h3 {
-  position: relative;
-  font-size: var(--font-size-xl);
-  margin-bottom: 0.75rem;
-  color: var(--text-color);
-  font-weight: var(--font-semibold);
-}
-
-.feature-card p {
-  position: relative;
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-  color: var(--text-color);
-  opacity: 0.9;
-}
-
-/* Button Styles */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -481,7 +391,7 @@ h3 {
 
 .btn-primary:hover {
   background: var(--primary-hover);
-  transform: translateY(-2px);
+  transform: var(--hover-lift-sm);
 }
 
 .btn-secondary {
@@ -492,25 +402,7 @@ h3 {
 
 .btn-secondary:hover {
   background: var(--bg-color);
-  transform: translateY(-2px);
-}
-
-/* Card Base Styles */
-.card-base {
-  padding: var(--spacing-md);
-  border-radius: var(--card-radius);
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  transition: var(--transition-base);
-}
-
-.hover-lift {
-  transition: var(--transition-base);
-}
-
-.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px var(--card-shadow);
+  transform: var(--hover-lift-sm);
 }
 
 /* About Section */
@@ -524,7 +416,6 @@ h3 {
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 2.25rem;
-  color: var(--text-color);
   font-weight: var(--font-semibold);
 }
 
@@ -538,7 +429,83 @@ h3 {
   opacity: 0.9;
 }
 
-/* Update Challenges Section */
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0 4rem;
+}
+
+.feature-card {
+  position: relative;
+  text-align: center;
+  padding: var(--card-padding);
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition-base);
+  will-change: transform, opacity;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, var(--primary) 300%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 0.1;
+}
+
+.feature-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--card-border);
+}
+
+.feature-card i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+}
+
+.feature-card:hover i {
+  transform: scale(1.1);
+  color: var(--primary-hover);
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.4));
+}
+
+.feature-card h3 {
+  position: relative;
+  font-size: var(--font-size-xl);
+  margin-bottom: 0.75rem;
+  font-weight: var(--font-semibold);
+}
+
+.feature-card p {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Challenges Section */
 .challenges-section {
   padding: 3rem 0;
   background: transparent;
@@ -550,25 +517,58 @@ h3 {
   font-size: 2rem;
 }
 
-/* Consolidate media queries */
-@media (max-width: 768px) {
-  :root {
-    --spacing-md: 1.5rem;
-    --spacing-lg: 3rem;
-    --heading-size: 2rem;
-  }
-
-  /* Group all mobile styles here */
-  .container {
-    padding: var(--spacing-sm);
-  }
-  .hero h1 {
-    font-size: var(--heading-size);
-  }
-  /* ... other mobile styles ... */
+.challenges-container {
+  position: relative;
+  min-height: 200px;
 }
 
-/* Remove all scattered media queries from different sections */
+.challenges-container.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 4px solid rgba(59, 130, 246, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 0.8s linear infinite;
+}
+
+.challenges-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 1rem;
+}
+
+.challenges-grid a {
+  background: var(--primary);
+  padding: 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  animation: fadeIn 0.4s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.05s);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  will-change: transform, opacity;
+}
+
+.challenges-grid a:hover {
+  transform: var(--hover-lift);
+  background: var(--primary-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
 .footer {
   padding: var(--spacing-lg) 0 var(--spacing-md);
   background: var(--card-bg);
@@ -599,7 +599,6 @@ h3 {
 .author-info h3 {
   font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-xs);
-  color: var(--text-color);
 }
 
 .author-info p {
@@ -610,9 +609,27 @@ h3 {
   margin-bottom: var(--spacing-sm);
 }
 
+.social-links {
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
 .footer-links h4 {
   font-size: var(--font-size-lg);
-  margin-bottom: var (--spacing-sm);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-color);
 }
 
@@ -646,65 +663,119 @@ h3 {
   font-size: var(--font-size-base);
 }
 
-/* Utilities */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-}
-
-/* 1. Consolidate repeated styles into utility classes */
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ========================================================================== 
-   4. Theme Modes 
-   ========================================================================== */
+/* ========== THEME MODES ========== */
 [data-theme="dark"] {
   --bg-color: #0f172a;
   --text-color: #f1f5f9;
   --card-bg: rgba(30, 41, 59, 0.9);
   --card-border: rgba(255, 255, 255, 0.1);
   --card-shadow: rgba(0, 0, 0, 0.3);
+}
 
-  /* Component overrides */
-  .challenges-grid a {
-    background: var(--primary);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+[data-theme="dark"] .navbar {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+[data-theme="dark"] .challenges-grid a {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .challenges-grid a:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .btn-secondary {
+  color: var(--text-color);
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .feature-card i {
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+/* ========== FOCUS STATES ========== */
+.nav-link:focus-visible,
+.btn:focus-visible,
+.github-link:focus-visible,
+.mobile-menu-btn:focus-visible,
+.footer-links a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .challenges-grid a:hover {
-    background: var(--primary-hover);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  .theme-toggle {
-    color: var(--text-color);
-  }
-
-  .btn-secondary {
-    color: var(--text-color);
-    border-color: var(--primary);
-  }
-
-  .btn-secondary:hover {
-    background: var(--primary);
-    color: #ffffff;
-  }
-
-  .feature-card i {
-    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ========================================================================== 
-   5. Media Queries 
-   ========================================================================== */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  will-change: transform, opacity;
+}
+
+.animated.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* For staggered animations */
+.animated-delay-1 {
+  transition-delay: 0.1s;
+}
+.animated-delay-2 {
+  transition-delay: 0.2s;
+}
+.animated-delay-3 {
+  transition-delay: 0.3s;
+}
+.animated-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animated {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --spacing-md: 1.5rem;
@@ -717,26 +788,29 @@ h3 {
     padding: 0 var(--spacing-sm);
   }
 
-  /* Typography */
   h1 {
     font-size: var(--font-size-3xl);
   }
+
   h2 {
     font-size: var(--font-size-2xl);
   }
+
   h3 {
     font-size: var(--font-size-xl);
   }
 
-  /* Components */
+  /* Hero */
   .hero h1 {
     font-size: 2.25rem;
   }
+
   .hero-subtitle {
     font-size: 1rem;
     padding: 0 1rem;
   }
 
+  /* Features */
   .features-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -745,18 +819,38 @@ h3 {
   /* Navigation */
   .nav-menu {
     display: none;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: var(--card-bg);
+    flex-direction: column;
+    gap: var(--spacing-md);
   }
 
   .nav-menu.active {
     display: flex;
-    flex-direction: column;
+    animation: slideIn 0.3s ease forwards;
+    transform: translateZ(0);
   }
 
   .mobile-menu-btn {
     display: block;
   }
 
-  /* Footer */
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-sm);
+  }
+
+  .github-link {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
   .footer {
     padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
   }
@@ -788,39 +882,6 @@ h3 {
     transform: translateY(-2px);
   }
 
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .nav-menu {
-    display: none;
-    position: fixed;
-    top: var(--navbar-height);
-    left: 0;
-    right: 0;
-    padding: var(--spacing-md);
-    background: var(--card-bg);
-    flex-direction: column;
-    gap: var(--spacing-md);
-    display: none;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    padding: var(--spacing-sm);
-  }
-
-  .github-link {
-    margin: 0;
-    width: 100%;
-    justify-content: center;
-  }
-
   @keyframes slideIn {
     from {
       opacity: 0;
@@ -830,5 +891,39 @@ h3 {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .challenges-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
