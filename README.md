@@ -118,7 +118,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Font Awesome](https://fontawesome.com/) for the icons
 - [Inter Font](https://fonts.google.com/specimen/Inter) for typography
-- [Hitesh Choudhary](https://x.com/hiteshchoudhary) and [Piyush Garg](https://x.com/piyushgarg_dev) for their easy learning approach towards a complex topic
+- [Hitesh Choudhary](https://x.com/Hiteshdotcom) and [Piyush Garg](https://x.com/piyushgarg_dev) for their easy learning approach towards a complex topic
 - All contributors and users of this learning resource
 
 ---
