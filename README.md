@@ -10,7 +10,7 @@ A comprehensive collection of interactive DOM manipulation challenges designed t
 
 ## 📋 Overview
 
-This project contains 10 progressive challenges focused on DOM manipulation techniques using vanilla JavaScript. Each challenge is designed to teach specific concepts while building practical components that you might use in real-world web applications.
+This project contains 11 progressive challenges focused on DOM manipulation techniques using vanilla JavaScript. Each challenge is designed to teach specific concepts while building practical components that you might use in real-world web applications.
 
 **[Live Demo](https://sagar-1m.github.io/JavaScript-DOM-Challenges/)** | **[Source Code](https://github.com/sagar-1m/JavaScript-DOM-Challenges)**
 
@@ -30,6 +30,7 @@ This project contains 10 progressive challenges focused on DOM manipulation tech
 | 8   | [Simple Shopping Cart](./challenge-8/)         | State management, event delegation, DOM updates      | 🛒      |
 | 9   | [Sliding Menu](./challenge-9/)                 | CSS transitions, event handling, accessibility       | 🪟      |
 | 10  | [Memory Card Game](./challenge-10/)            | Array manipulation, DOM creation, game logic         | 🂫       |
+| 11  | [Color Button Creator](./challenge-11/)        | Closures, dynamic element creation, color management | 🎨      |
 
 ## 🌟 Key Features
 

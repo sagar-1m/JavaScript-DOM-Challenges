@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Challenge 11: Color Button Creator | JavaScript DOM Challenges
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">← Back to Challenges</a>
+
+    <div class="container">
+      <h1>Color Button Creator</h1>
+      <p>
+        This challenge demonstrates JavaScript closures - each button
+        "remembers" its color!
+      </p>
+
+      <!-- Dropdown for color selection -->
+      <select id="colorSelect">
+        <option value="">Choose a color</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="orange">Orange</option>
+        <option value="teal">Teal</option>
+      </select>
+
+      <!-- Button to create color buttons -->
+      <button id="createBtn">Create Button</button>
+
+      <!-- Container for generated buttons -->
+      <div id="buttonContainer"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
